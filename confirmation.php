@@ -1,7 +1,7 @@
 <?php
 
-include 'inc/connect.php';
-include 'inc/database.php';
+require_once 'inc/connect.php';
+require_once 'inc/database.php';
 
 $db = databaseConnect();
 
@@ -11,4 +11,6 @@ $id = $_POST['id'];
 $quantity = $_POST['quantity'];
 
 addOrder($db);
-addOrderProduct($db, $id, $quantity);
+$order_id = getLastOrderId($db)[0]['id'];
+var_dump($order_id);
+createOrderProduct($db, $order_id, $id, $quantity);

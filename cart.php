@@ -1,8 +1,8 @@
 <?php
 session_start();
-include 'inc/database.php';
-include 'my-functions.php';
-include 'inc/connect.php';
+require_once 'inc/database.php';
+require_once 'my-functions.php';
+require_once 'inc/connect.php';
 $mysqlConnection = databaseConnect();
 ?>
 
